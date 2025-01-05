@@ -41,6 +41,12 @@ int main(){
         if(strncmp("q",buffer,1)==0){
             break;
         }
+        else if(strncmp("persist",buffer,7)==0){
+            recv(client_sock,response,sizeof(response),0);
+            printf("%s",response);
+            
+            
+        }
         else{
             recv(client_sock,response,sizeof(response),MSG_WAITALL);
             printf("%s",response);
